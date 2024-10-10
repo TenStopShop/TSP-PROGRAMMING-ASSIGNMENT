@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECPRO Academy Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        body {
+            background-image: url("baby.jpg"); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
+        }
+        header, footer {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .courses {
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .course {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to TECPRO Academy</h1>
+        <nav>
+            <ul>
+                <li><a href="About Page.html">About</a></li>
+                <li><a href="Contact Page.html">Contact</a></li>
+                <li><a href="Course page.html">Courses</a></li>
+                <li><a href="Technical Requirements Page.html">Technical Requirements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <a href="Home.html">Home</a></li>
+        <li><a href="About Page.html">About</a></li>
+        <li><a href="Contact Page.html">Contact</a></li>
+            <li><a href="Course page.html">Courses</a></li>
+                <li><a href="Technical Requirements Page.html">Technicl Reuirements</a>
+
+
+        <label for="category-select">Filter by Category:</label>
+        <select id="category-select">
+            <option value="all">All</option>
+            <option value="security">Cyber Security</option>
+            <option value="programming">Programming</option>
+            <option value="data-science">Data Science</option>
+        </select>
+
+        <section class="courses" id="course-list">
+            <h2>Our Courses</h2>
+            <div class="course" data-category="security">
+                <img src="Cypber sec.jpg" alt="Cyber Security">
+                <h3>Cyber Security</h3>
+                <p>Cybersecurity is the practice of protecting systems, networks, and data from digital attacks...</p>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course" data-category="programming">
+                <img src="pr.jpg" alt="Programming">
+                <h3>Programming</h3>
+                <p>Programming is the process of creating instructions that a computer can execute...</p>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course" data-category="data-science">
+                <img src="bbl.jpg" alt="Data Science">
+                <h3>Data Science</h3>
+                <p>Data science is an interdisciplinary field that uses scientific methods...</p>
+                <button>Enroll Now</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TECPRO Academy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const categorySelect = document.getElementById('category-select');
+        const courseList = document.getElementById('course-list');
+
+        categorySelect.addEventListener('change', (event) => {
+            const selectedCategory = event.target.value;
+            const courses = courseList.querySelectorAll('.course');
+
+            courses.forEach(course => {
+                if (selectedCategory === 'all' || course.dataset.category === selectedCategory) {
+                    course.style.display = 'block';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
